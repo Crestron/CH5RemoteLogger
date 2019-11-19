@@ -1,3 +1,11 @@
+# Merged from previous gitignore
+dist
+node_modules
+**/*.log
+.env
+**/public/*.js
+
+
 # Logs
 logs
 *.log
