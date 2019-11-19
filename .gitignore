@@ -4,6 +4,7 @@ node_modules
 **/*.log
 .env
 **/public/*.js
+.idea
 
 
 # Logs
