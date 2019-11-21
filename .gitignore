@@ -6,6 +6,9 @@ node_modules
 **/public/*.js
 .idea
 
+# Ignore log folder content but keep .gitkeep
+log
+!/**/.gitkeep
 
 # Logs
 logs
