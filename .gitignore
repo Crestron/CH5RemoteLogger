@@ -1,3 +1,15 @@
+# Merged from previous gitignore
+dist
+node_modules
+**/*.log
+.env
+**/public/*.js
+.idea
+
+# Ignore log folder content but keep .gitkeep
+log
+!/**/.gitkeep
+
 # Logs
 logs
 *.log
