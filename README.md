@@ -9,10 +9,12 @@
 | DEV NIGHTLY - latest-dev | Status |
 | ------ | ----------- |
 | Build Pipeline | ![Build status](https://dev.azure.com/crestron-mobile-devops/MobileApps/_apis/build/status/Blackbird/CoreBuild/CH5RemoteLogger?branchName=dev) |
+| Release Pipeline | ![Build status](https://vsrm.dev.azure.com/crestron-mobile-devops/_apis/public/Release/badge/0403b700-ab40-43cd-9990-961924c561bc/39/95) |
 
 | MASTER-QE - latest-qe | Status |
 | ------ | ----------- |
 | Build Pipeline | ![Build status](https://dev.azure.com/crestron-mobile-devops/MobileApps/_apis/build/status/Blackbird/CoreBuild/CH5RemoteLogger?branchName=master) |
+| Release Pipeline | ![Build status](https://vsrm.dev.azure.com/crestron-mobile-devops/_apis/public/Release/badge/0403b700-ab40-43cd-9990-961924c561bc/39/97) |
 
 ## 1. Introduction:
 Integrators do not have the ability to use the Browser Dev Tools on the CH5 container applications on x60 and iOS. As such they have little insight into error messages or diagnostic console log messages that would be displayed in the console of these tools.
