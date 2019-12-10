@@ -12,6 +12,7 @@
   "scripts": {
     "start-debug": "tslint ./api/src/**/*.ts && tsc-watch --inlineSourceMap --inlineSources --onSuccess 'nodemon'",
     "start": "tslint ./api/src/**/*.ts && tsc-watch --outDir ./api/dist --onSuccess 'nodemon'",
+    "start-app": "yarn build-react && cd app/public && ws -o",
     "test": "mocha -r ts-node/register ./api/tests/unit/index.spec.ts",
     "build-react": "webpack --mode production --config ./app/webpack.config.js",
     "build-api": "tslint ./api/src/**/*.ts && tsc --outDir ./api/dist"
@@ -46,6 +47,7 @@
     "babel-loader": "8.0.2",
     "chai": "^4.2.0",
     "css-loader": "1.0.0",
+    "local-web-server": "^3.0.7",
     "mocha": "^6.1.4",
     "nodemon": "^1.19.1",
     "react-scripts": "^3.0.1",

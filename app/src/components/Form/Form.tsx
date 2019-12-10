@@ -92,17 +92,18 @@ class Form extends Component<TFormProps> {
                     </div>
                     <div className="form-section">
                         <h3>Regular Expression</h3>
-                        <textarea
+                        <input
                             className="reg-exp-input"
                             defaultValue={this.props.regularExpression + ''}
                             name="regularExpression"
                             onChange={this.handleOnChange}
-                            placeholder="/RegExp/i"
+                            placeholder="^[a-z0-9]+$"
+                            type="text"
                         />
 
                     </div>
                 </div>
-                
+
             </div>
         );
     }
