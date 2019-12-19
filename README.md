@@ -75,5 +75,5 @@ Hosted on `http://127.0.0.1:{8080}`. Use this interface to change the filter and
 - send the `ch5-remote-logger.tar` file
 
 ### Receiver tasks:
-- load `ch5-remote-logger.tar` into docker using: `docker load ./ch5-remote-logger.tar`
+- load `ch5-remote-logger.tar` into docker using: `docker load -i ch5-remote-logger.tar`
 - do the step from chapter [4. Up and Running](#4-up-and-running)
