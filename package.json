@@ -15,7 +15,8 @@
     "start-app": "yarn build-react && cd app/public && ws -o",
     "test": "mocha -r ts-node/register ./api/tests/unit/index.spec.ts",
     "build-react": "webpack --mode production --config ./app/webpack.config.js",
-    "build-api": "tslint ./api/src/**/*.ts && tsc --outDir ./api/dist"
+    "build-api": "tslint ./api/src/**/*.ts && tsc --outDir ./api/dist",
+    "build-all": "yarn build-react && yarn build-api"
   },
   "dependencies": {
     "axios": "^0.19.0",
