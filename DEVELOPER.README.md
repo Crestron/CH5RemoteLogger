@@ -15,15 +15,34 @@ Use the following shortcuts:
 2. `yarn start` - API
 3. `yarn start-app` - web
 
-## 2.1. Building the docker images
+## 3. Building the docker images:
+Run the following command based on the desired environment, currently there are dev and prod environments available
+- Build the docker image for development: `docker build . -t ch5-remote-logger:dev -f ./env/dev/Dockerfile`
+- Build the docker image for production: `docker build . -t ch5-remote-logger:latest -f ./env/prod/Dockerfile`
 
-See Step 4 in [Main README](README.md)
+## 4. Up and running:
+To create the docker container within the remote-logger run:
+- Dev: ``` docker run -p {8080}:80 ch5-remote-logger:dev```
+- Production: ```docker run -p {8080}:80 ch5-remote-logger:latest ```
 
-## 3. Test locally
+Now you should have an up and running container found at: http://127.0.0.1:8080
 
-Unit tests are available, use `yarn test` to run them, in addition, some helpful code snippets is provided below.
+## 5. Docker image distribution without using a hub service:
+
+### Distributor tasks:
+- create the docker image build for production `docker build . -t ch5-remote-logger:latest -f ./env/prod/Dockerfile`
+- save the docker image locally `docker save -o ./ch5-remote-logger.tar ch5-remote-logger:latest`
+- send the `ch5-remote-logger.tar` file
+
+### Receiver tasks:
+- load `ch5-remote-logger.tar` into docker using: `docker load -i ch5-remote-logger.tar`
+- do the step from chapter [3. Up and Running](#3-up-and-running)
+
+## 6. Code snippets for integration
+
+Unit tests are available, use `yarn test` to run them, in addition, some quickstart code snippets are provided below.
 Adjust the IP and port as needed.
-### 3.1. Test snippets for the docker build
+### 6.1. Vanilla JS
 
  ```
 const appender = CrComLib.getRemoteAppender('localhost', '8080'); // RemoteLogger API
@@ -37,10 +56,9 @@ logger.info(msg);
 logger.log(msg);
 ```
 
-### 3.2. Test snippet - Angular 
+### 6.2. Angular with ch5-buttons
 
 ```
-// TS
 declare var CrComLib;
 
 logger: any;
@@ -67,7 +85,8 @@ sendLogOnClick() {
  this.logger.log('LOG');
 }
 
-// HTML
+...
+
 <div>
  <ch5-button (click)="sendErrorOnClick()" type="danger" label="ERROR"></ch5-button>
  <ch5-button (click)="sendWarnOnClick()" type="warning" label="WARNING"></ch5-button>
