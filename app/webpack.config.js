@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
+const Dotenv = require("dotenv-webpack");
 
 const baseConfig = {
   entry: path.join(__dirname, './src/index.tsx'),
@@ -39,6 +40,7 @@ const baseConfig = {
     publicPath: "http://127.0.0.1:3000/public/",
     port: 3000,
   },
+  plugins: [ new Dotenv() ]
 }
 
 const bundleForApi = Object.assign({}, baseConfig, {

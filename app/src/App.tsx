@@ -11,9 +11,14 @@ import './App.css';
 
 class App extends Component {
   render() {
+    const version = process.env.REMOTE_LOGGER_VERSION;
+
     return (
       <div className="App">
         <Form />
+        <p className="text-center">
+          CH5RemoteLogger version {version ? ` ${version}.` : ` not defined.`}  
+        </p>
       </div>
     );
   }
